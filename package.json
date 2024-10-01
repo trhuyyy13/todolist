@@ -1,20 +1,35 @@
 {
   "name": "to-do-list",
   "version": "1.0.0",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "beautiful": "lint-staged",
+    "start": "nodemon src/index.js",
+    "watch": "node-sass --watch src/resources/scss/ --output src/public/css/",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trhuyyy13/todolist.git"
+  },
+  "explorer.compactFolders": false,
+  "author": "HuyTr",
   "license": "ISC",
   "description": "",
   "dependencies": {
     "body-parser": "^1.20.3",
+    "bootstrap": "^5.3.3",
     "express": "^4.21.0",
+    "express-handlebars": "^8.0.1",
     "mongoose": "^8.7.0"
   },
   "devDependencies": {
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
     "morgan": "^1.10.0",
-    "nodemon": "^3.1.7"
+    "nodemon": "^3.1.7",
+    "prettier": "^3.3.3"
   }
 }
