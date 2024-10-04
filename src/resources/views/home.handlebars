@@ -1,28 +1,21 @@
-
-
-  <div class="alert alert-info" role="alert">
+<div class="alert alert-info" role="alert">
     HELLO, XIN CHÀO {{name}} đến với web TO-DO LIST của tôi.
-  </div>
-
+</div>
 
 <div class="card">
   <div class="card-body">
     <h5 class="card-title">Todo List</h5>
     <form id="todoForm" class="mb-3">
-      <div class="input-group">
-        <input type="text" class="form-control" id="todoInput" placeholder="Date">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" id="todoDate" placeholder="Date">
       </div>
-
-      <div class="input-group">
-        <input type="text" class="form-control" id="todoInput" placeholder="Nội dung">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" id="todoContent" placeholder="Nội dung">
       </div>
-
-      <div class="input-group">
-        <input type="text" class="form-control" id="todoInput" placeholder="Ghi chú cụ thể">
-
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" id="todoNote" placeholder="Ghi chú cụ thể">
       </div>
-<button class="btn btn-primary" type="submit">Thêm</button>
-
+      <button class="btn btn-primary" type="submit">Thêm</button>
     </form>
     <ul class="list-group" id="todoList">
       <!-- Các mục công việc sẽ nằm ở đây -->
@@ -30,19 +23,9 @@
   </div>
 </div>
 
-
-
-<div class="alert alert-success" role="alert">
-  Công việc đã được thêm thành công!
-</div>
-<div class="alert alert-danger" role="alert">
-  Công việc đã bị xóa!
-</div>
-
 <div class="container mt-5">
   <h1 class="text-center">To-Do List</h1>
   
-  <!-- Bảng hiển thị dữ liệu to-do-list -->
   <table class="table table-hover">
     <thead class="table-dark">
       <tr>
@@ -52,8 +35,8 @@
         <th scope="col">Hành động</th>
       </tr>
     </thead>
-    <tbody id="todoList">
-      <!-- Dữ liệu mẫu -->
+    <tbody id="todoListBody">
+      <!-- Các công việc sẽ được thêm tại đây -->
       <tr>
         <td>01/10/2024</td>
         <td>Học Bootstrap</td>
@@ -73,3 +56,32 @@
     </tbody>
   </table>
 </div>
+{{!-- 
+<script>
+  // Xử lý thêm công việc vào danh sách to-do list
+  document.getElementById('todoForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+    const date = document.getElementById('todoDate').value;
+    const content = document.getElementById('todoContent').value;
+    const note = document.getElementById('todoNote').value;
+
+    if (date && content && note) {
+      const newRow = `
+        <tr>
+          <td>${date}</td>
+          <td>${content}</td>
+          <td>${note}</td>
+          <td>
+            <button class="btn btn-danger btn-sm" onclick="deleteTask(this)">Xóa</button>
+          </td>
+        </tr>
+      `;
+      document.getElementById('todoListBody').insertAdjacentHTML('beforeend', newRow);
+    }
+  });
+
+  // Xử lý xóa công việc
+  function deleteTask(button) {
+    button.closest('tr').remove();
+  }
+</script> --}}
